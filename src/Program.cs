@@ -8,7 +8,7 @@ namespace InterestCalc
         {
             Console.Clear();
 
-            Console.WriteLine("Are you looking to find out interest or time?");
+            Console.WriteLine("What would you like to calculate?");
             Console.WriteLine("1. Interest");
             Console.WriteLine("2. Time");
 
@@ -33,7 +33,27 @@ namespace InterestCalc
 
         static void Interest()
         {
-            
+            int principal;
+            int rate;
+            int time;
+            int interest;
+
+            Console.WriteLine("What is the original amount/investment? (Rounded to nearest whole)");
+            principal = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is the percentage per time period? (Rounded to nearest whole)");
+            Console.Write("%");
+            rate = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("How many years will the investment be held?");
+            time = Convert.ToInt32(Console.ReadLine());
+
+            interest = (principal * rate * time) / 100;
+
+            Console.WriteLine("Interest will be $" + interest);
+            Console.Write("Press any key to restart");
+            Console.ReadLine();
+            Main();
         }
 
         static void Time()
