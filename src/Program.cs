@@ -41,7 +41,7 @@ namespace InterestCalc
             Console.WriteLine("What is the original amount/investment? (Rounded to nearest whole)");
             principal = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("What is the percentage per time period? (Rounded to nearest whole)");
+            Console.WriteLine("What is the rate? (Percentage per time period, rounded to nearest whole)");
             Console.Write("%");
             rate = Convert.ToInt32(Console.ReadLine());
 
@@ -58,7 +58,24 @@ namespace InterestCalc
 
         static void Time()
         {
+            int amount;
+            int rate;
+            int time;
+            int interest;
 
+            Console.WriteLine("What is the amount? (Rounded to nearest whole)");
+            amount = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is the rate? (Percentage per time period, rounded to nearest whole)");
+            Console.Write("%");
+            rate = Convert.ToInt32(Console.ReadLine());
+
+            interest = amount * rate / 100;
+
+            Console.WriteLine("Investment is in for " + interest + " years");
+            Console.Write("Press any key to restart");
+            Console.ReadLine();
+            Main();
         }
     }
 }
